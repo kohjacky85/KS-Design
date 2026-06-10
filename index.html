@@ -982,7 +982,7 @@
             .primary-header {
                 flex-wrap: wrap;
                 gap: 12px;
-                padding-top: 10px;
+                padding: 10px 12px 12px 12px;
                 border-bottom: 1px solid #e5e5e5;
                 position: sticky; /* sticky mobile header */
                 top: 0;
@@ -1007,6 +1007,10 @@
                 display: block;
                 order: 0;
                 z-index: 4;
+                color: #202020;
+                -webkit-appearance: none;
+                appearance: none;
+                -webkit-tap-highlight-color: transparent;
             }
 
             .right-icons {
@@ -1131,6 +1135,28 @@
                 flex: 0 0 100%;
                 width: 100%;
                 max-width: 100%;
+                min-width: 0;
+                overflow: hidden;
+            }
+
+            .search-area {
+                min-width: 0;
+                padding: 10px 14px;
+            }
+
+            .search-input {
+                min-width: 0;
+            }
+
+            .ask-krisshop-button {
+                margin: 2px;
+                padding: 8px;
+                max-width: 48%;
+            }
+
+            .ask-text {
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .ask-content-wrapper {
