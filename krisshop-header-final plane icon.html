@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrisShop Header - Brand Concierge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f9f9f9;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: #000000;
+            color: #ffffff;
+            padding: 10px 24px;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .top-banner a,
+        .top-banner a:visited,
+        .top-banner a:hover,
+        .top-banner a:active,
+        .top-banner a:focus {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Main Header Container */
+        .header-container {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            position: relative;
+        }
+
+        /* Primary Header Row */
+        .primary-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            gap: 32px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-image {
+            height: 46px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .logo-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000000;
+            letter-spacing: -0.2px;
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            font-weight: 500;
+            color: #999999;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* Unified Search/Ask Component */
+        .search-ask-unified {
+            flex: 1;
+            max-width: 620px;
+            display: flex;
+            align-items: center;
+            background: #f3f3f3;
+            border-radius: 32px;
+            border: 1px solid #e5e5e5;
+            padding: 0;
+            position: relative;
+        }
+
+        .search-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+        }
+
+        .search-icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            color: #333333;
+            outline: none;
+            font-weight: 400;
+        }
+
+        .search-input::placeholder {
+            color: #999999;
+        }
+
+        .search-suggest-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            right: 0;
+            display: none;
+            border: 1px solid #e2e2e2;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+            padding: 12px;
+            z-index: 45;
+        }
+
+        .search-suggest-dropdown.is-visible {
+            display: block;
+        }
+
+        .search-suggest-meta {
+            font-size: 12px;
+            color: #666666;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .search-suggest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .search-suggest-card {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            gap: 8px;
+            align-items: center;
+            border: 1px solid #ebebeb;
+            border-radius: 10px;
+            padding: 8px;
+            background: #fafafa;
+        }
+
+        .search-suggest-thumb {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1f1f1f, #555555);
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .search-suggest-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2a2a2a;
+            line-height: 1.2;
+            margin-bottom: 2px;
+        }
+
+        .search-suggest-sub {
+            font-size: 11px;
+            color: #6a6a6a;
+            line-height: 1.2;
+        }
+
+        .ask-krisshop-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #1a1a1a;
+            border: none;
+            border-radius: 28px;
+            padding: 10px;
+            margin: 3px;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+
+        .ask-krisshop-button:hover {
+            background: #2d2d2d;
+        }
+
+        .ask-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .ask-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .beta-badge {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 26px;
+        }
+
+        /* Right Icons */
+        .right-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .icon-button {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            position: relative;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .icon-button:hover {
+            opacity: 1;
+        }
+
+        .travel-toggle-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: transparent;
+            padding: 0;
+            color: currentColor;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .travel-toggle-button:hover {
+            opacity: 1;
+        }
+
+        .travel-toggle-button svg {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+
+        .travel-toggle-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .travel-hint-box {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            width: max-content;
+            max-width: min(280px, calc(100vw - 24px));
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid #e3e3e3;
+            background: #ffffff;
+            color: #4a4a4a;
+            font-size: 12px;
+            line-height: 1.3;
+            font-weight: 500;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transform: translateY(-4px);
+            transition: opacity 160ms ease, transform 160ms ease;
+            pointer-events: none;
+            z-index: 25;
+        }
+
+        .travel-hint-box::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: var(--travel-hint-tip-x, 50%);
+            width: 10px;
+            height: 10px;
+            background: #ffffff;
+            border-top: 1px solid #e3e3e3;
+            border-left: 1px solid #e3e3e3;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .travel-hint-box.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #000000;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 600;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navigation Row */
+        .navigation-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px 7px 24px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            color: #000000;
+        }
+
+        .nav-item.active {
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #000000;
+        }
+
+        .nav-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+        }
+
+        .powered-by {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #999999;
+        }
+
+        .powered-by-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .powered-by-text {
+            font-weight: 500;
+        }
+
+        .powered-by-brand {
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .traveller-desktop-cluster {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            min-width: 0;
+        }
+
+        .traveller-desktop-tooltip {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 10px);
+            display: none;
+            min-width: 280px;
+            max-width: 420px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #e2e2e2;
+            background: #ffffff;
+            color: #5d5d5d;
+            font-size: 12px;
+            line-height: 1.35;
+            font-weight: 500;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+            white-space: normal;
+            z-index: 20;
+        }
+
+        .traveller-desktop-tooltip.is-visible {
+            display: block;
+        }
+
+        .traveller-desktop-tooltip::before {
+            content: '';
+            position: absolute;
+            left: var(--desktop-tip-x, 50%);
+            top: -6px;
+            width: 10px;
+            height: 10px;
+            background: #ffffff;
+            border-left: 1px solid #e2e2e2;
+            border-top: 1px solid #e2e2e2;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .traveller-utility-row {
+            display: none;
+            justify-content: center;
+            padding: 8px 24px 9px 24px;
+            background: #f8f8f8;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .traveller-utility-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            width: min(100%, 380px);
+        }
+
+        .traveller-mode-message {
+            flex: 1;
+            min-width: 0;
+            font-size: 13px;
+            line-height: 1.35;
+            font-weight: 500;
+            color: #5d5d5d;
+            text-align: left;
+            padding: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Traveller tab selector styles (capsule track with active inner tab) */
+        .traveller-tabs {
+            display: inline-flex;
+            align-items: center;
+            gap: 0px;
+            padding: 2px;
+            background: #eeeeee;
+            border: 1px solid #e2e2e2;
+            border-radius: 999px;
+            box-shadow: none;
+        }
+
+        .traveller-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            padding: 10px;
+            background: transparent;
+            color: #8a8a8a;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background 140ms ease, color 140ms ease, box-shadow 140ms ease;
+        }
+
+        .traveller-tab span {
+            white-space: nowrap;
+        }
+
+        .traveller-tab-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            display: block;
+            opacity: 0.85;
+        }
+
+        .traveller-tab-icon--plane {
+            transform: rotate(35deg);
+            transform-origin: 50% 50%;
+        }
+
+        .traveller-tab.active .traveller-tab-icon {
+            opacity: 1;
+        }
+
+        .traveller-tab.active {
+            background: #ffffff;
+            color: #222222;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+        }
+
+        /* Hamburger (mobile only) */
+        .hamburger-button {
+            display: none;
+            background: transparent;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .hamburger-icon {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .mobile-menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.34);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 220ms ease, visibility 0s linear 220ms;
+            z-index: 90;
+        }
+
+        .mobile-menu-backdrop.is-open {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 220ms ease;
+        }
+
+        .mobile-menu-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: min(82vw, 320px);
+            background: #ffffff;
+            border-right: 1px solid #e6e6e6;
+            box-shadow: 10px 0 24px rgba(0, 0, 0, 0.18);
+            transform: translateX(-100%);
+            transition: transform 220ms ease;
+            z-index: 91;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 14px 12px;
+        }
+
+        .mobile-menu-drawer.is-open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 4px 10px 4px;
+            border-bottom: 1px solid #ededed;
+        }
+
+        .mobile-menu-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #262626;
+        }
+
+        .mobile-menu-close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            color: #565656;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .mobile-menu-close:hover {
+            background: #f2f2f2;
+        }
+
+        .mobile-menu-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .mobile-menu-item {
+            display: block;
+            padding: 12px 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #2f2f2f;
+            text-decoration: none;
+        }
+
+        .mobile-menu-item:hover {
+            background: #f5f5f5;
+        }
+
+        body.mobile-menu-open {
+            overflow: hidden;
+        }
+
+        /* Ask KrisShop body content card */
+        .ask-content-wrapper {
+            display: none;
+            position: fixed;
+            right: 16px;
+            top: 78px;
+            width: min(560px, calc(100vw - 32px));
+            height: calc(100vh - 94px);
+            z-index: 1000;
+        }
+
+        .main-page-banner {
+            width: 100%;
+            margin: 0;
+        }
+
+        .main-page-banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .ask-content-wrapper.is-visible {
+            display: block;
+        }
+
+        .ask-content-card {
+            position: relative;
+            height: 100%;
+            overflow-y: auto;
+            background: #ffffff;
+            border: 1px solid #d8d8d8;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+
+        .ask-panel-minimize {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            color: #5a5a5a;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .ask-panel-minimize:hover {
+            background: #f2f2f2;
+        }
+
+        .ask-panel-minimize svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .ask-content-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .ask-content-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1f1f1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ask-content-icon .ask-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .ask-content-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .ask-content-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2b2b2b;
+            line-height: 1.1;
+        }
+
+        .ask-content-beta {
+            background: #d3d3d3;
+            color: #555555;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 999px;
+            line-height: 1.1;
+        }
+
+        .ask-content-subtitle {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .ask-content-desc {
+            font-size: 14px;
+            line-height: 1.35;
+            color: #666666;
+            margin: 22px 0 24px 0;
+            max-width: 1120px;
+        }
+
+        .ask-content-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 26px;
+        }
+
+        .ask-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #f2f2f2;
+            border: 1px solid #dbdbdb;
+            border-radius: 999px;
+            padding: 12px 18px;
+            color: #2d2d2d;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .ask-chip svg {
+            width: 18px;
+            height: 18px;
+            opacity: 0.6;
+        }
+
+        .ask-content-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .ask-action-primary,
+        .ask-action-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 999px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }
+
+        .ask-action-primary {
+            background: #1f1f1f;
+            color: #ffffff;
+            border-color: #1f1f1f;
+        }
+
+        .ask-action-secondary {
+            background: #efefef;
+            color: #333333;
+            border-color: #d7d7d7;
+        }
+
+        .scroll-test-content {
+            padding: 20px 16px 28px 16px;
+            background: #f7f7f7;
+        }
+
+        .scroll-test-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222222;
+            margin-bottom: 6px;
+        }
+
+        .scroll-test-subtitle {
+            font-size: 13px;
+            color: #666666;
+            margin-bottom: 16px;
+        }
+
+        .scroll-test-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .scroll-test-item {
+            background: #ffffff;
+            border: 1px solid #e4e4e4;
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .scroll-test-item h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #252525;
+            margin-bottom: 4px;
+        }
+
+        .scroll-test-item p {
+            font-size: 13px;
+            line-height: 1.45;
+            color: #5f5f5f;
+        }
+
+        @media (max-width: 1024px) {
+            /* Keep header in a single row similar to desktop,
+               but shorten the search bar for medium screens. */
+            .primary-header {
+                flex-wrap: nowrap;
+                gap: 16px;
+            }
+
+            .logo-section {
+                order: 1;
+            }
+
+            .search-ask-unified {
+                order: 2;
+                flex: 1 1 420px; /* allow it to shrink a bit */
+                width: auto;
+            }
+
+            .right-icons {
+                order: 3;
+                margin-left: auto;
+            }
+
+            .navigation-row {
+                padding: 0 16px 7px 16px;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                gap: 22px;
+                overflow-x: auto;
+                overflow-y: hidden; /* prevent vertical scrollbar */
+            }
+
+            .nav-item {
+                font-size: 13px;
+            }
+
+            .traveller-tabs {
+                padding: 1px;
+            }
+
+            .traveller-tab {
+                font-size: 13px;
+                padding: 8px 9px;
+                gap: 5px;
+            }
+
+            .traveller-tab-icon {
+                width: 14px;
+                height: 14px;
+            }
+
+            .powered-by {
+                display: none;
+            }
+
+            .traveller-desktop-tooltip {
+                min-width: 240px;
+                max-width: 320px;
+            }
+
+            .ask-content-wrapper {
+                left: 16px;
+                right: 16px;
+                width: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* On mobile, stack header elements with search full-width */
+            .primary-header {
+                flex-wrap: wrap;
+                gap: 12px;
+                padding-top: 10px;
+                border-bottom: 1px solid #e5e5e5;
+                position: sticky; /* sticky mobile header */
+                top: 0;
+                z-index: 15;
+                background: #ffffff;
+            }
+
+            .logo-section {
+                order: 1;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 10px; /* align logo center with mobile icon row */
+                z-index: 3;
+            }
+
+            .logo-image {
+                height: 38px;
+            }
+
+            .hamburger-button {
+                display: block;
+                order: 0;
+                z-index: 4;
+            }
+
+            .right-icons {
+                order: 2;
+                margin-left: auto;
+                gap: 12px;
+            }
+
+            .right-icons .icon-button,
+            .right-icons .travel-toggle-button {
+                width: 22px;
+                height: 22px;
+            }
+
+            .travel-toggle-wrap {
+                display: inline-flex;
+            }
+
+            .right-icons .travel-toggle-button svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .right-icons .travel-toggle-button svg.icon-plane {
+                transform: rotate(35deg);
+                transform-origin: 50% 50%;
+            }
+
+            .travel-toggle-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Hide the full nav menu on mobile; use hamburger instead */
+            .nav-menu {
+                display: none;
+            }
+
+            .navigation-row {
+                display: none;
+            }
+
+            .traveller-desktop-tooltip {
+                display: none !important;
+            }
+
+            .traveller-utility-row {
+                display: flex;
+                position: static;
+                overflow: hidden;
+                max-height: 88px;
+                padding: 7px 16px 8px 16px;
+                background: #f8f8f8;
+                border-bottom: 1px solid #ececec;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                pointer-events: auto;
+                transition: max-height 220ms ease, padding 220ms ease, opacity 180ms ease, transform 180ms ease, border-color 220ms ease;
+            }
+
+            .traveller-utility-row.is-scrolled-hidden {
+                max-height: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                border-bottom-color: transparent;
+                opacity: 0;
+                transform: translateY(-4px);
+                pointer-events: none;
+            }
+
+            .traveller-utility-row.is-open {
+                display: flex;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: var(--traveller-row-top, 72px);
+                z-index: 12;
+                max-height: none;
+                padding-top: 7px;
+                padding-bottom: 8px;
+                border-top: 1px solid #ececec;
+                border-bottom-color: #ececec;
+                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .traveller-utility-inner {
+                width: 100%;
+            }
+
+            .traveller-utility-inner .traveller-tabs {
+                display: flex;
+                width: auto;
+                min-width: 190px;
+            }
+
+            .traveller-utility-inner .traveller-tab {
+                flex: 0 0 auto;
+                text-align: center;
+                padding: 8px 10px;
+                font-size: 13px;
+                gap: 5px;
+            }
+
+            .traveller-utility-inner .traveller-tab-icon {
+                width: 15px;
+                height: 15px;
+            }
+
+            .traveller-mode-message {
+                font-size: 12px;
+                line-height: 1.3;
+            }
+
+            .search-ask-unified {
+                order: 3;
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .ask-content-wrapper {
+                left: 8px;
+                right: 8px;
+                top: 70px;
+                width: auto;
+                height: calc(100vh - 78px);
+            }
+
+            .search-suggest-dropdown {
+                top: calc(100% + 8px);
+                padding: 10px;
+                border-radius: 12px;
+            }
+
+            .search-suggest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-page-banner img {
+                width: 100%;
+            }
+
+            .ask-content-card {
+                padding: 16px;
+                border-radius: 12px;
+            }
+
+            .ask-content-title {
+                font-size: 18px;
+            }
+
+            .ask-content-beta {
+                font-size: 14px;
+                padding: 2px 8px;
+            }
+
+            .ask-content-subtitle {
+                font-size: 14px;
+            }
+
+            .ask-content-desc {
+                font-size: 14px;
+                margin: 14px 0 16px 0;
+            }
+
+            .ask-chip {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .ask-action-primary,
+            .ask-action-secondary {
+                font-size: 14px;
+                padding: 10px 14px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-backdrop,
+            .mobile-menu-drawer {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        Delivery Notice: Overseas Delivery Charge has been updated for affected countries. Please read more <a href="https://www.krisshop.com/en/page/delivery" target="_blank">HERE</a>.
+    </div>
+
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside class="mobile-menu-drawer" aria-hidden="true" aria-label="Mobile menu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">MENU</span>
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-menu-nav" aria-label="Mobile navigation">
+            <a href="#" class="mobile-menu-item">CATEGORIES</a>
+            <a href="#" class="mobile-menu-item">BRANDS</a>
+            <a href="#" class="mobile-menu-item">DEALS</a>
+            <a href="#" class="mobile-menu-item">BATIK LABEL</a>
+            <a href="#" class="mobile-menu-item">NEW ARRIVALS</a>
+        </nav>
+    </aside>
+
+    <!-- Main Header -->
+    <div class="header-container">
+        <!-- Primary Header Row -->
+        <div class="primary-header">
+            <!-- Hamburger (mobile only) -->
+            <button class="hamburger-button" aria-label="Open menu">
+                <svg class="hamburger-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 7h18M3 12h18M3 17h18" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+            <!-- Logo -->
+            <div class="logo-section">
+                <img class="logo-image" src="https://www.krisshop.com/adobe/dynamicmedia/deliver/dm-aid--d5d8ffd9-07c3-440b-999e-645e4b461257/krisshop-logo.svg.webp?preferwebp=true" alt="KrisShop logo">
+            </div>
+
+            <!-- Unified Search/Ask Component -->
+            <div class="search-ask-unified">
+                <div class="search-area">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search for brands, products and more">
+                </div>
+                <button class="ask-krisshop-button">
+                    <!-- Sparkles icon: main sparkle plus two small sparkles -->
+                    <svg class="ask-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Center sparkle -->
+                        <path d="M12 2.5l1.6 3.3 3.3 1.6-3.3 1.6L12 12l-1.6-3.3L6.9 7.1l3.3-1.6L12 2.5z"/>
+                        <!-- Left small sparkle -->
+                        <path d="M5 11.5l.7 1.4 1.4.7-1.4.7L5 15.9l-.7-1.4-1.4-.7 1.4-.7L5 11.5z"/>
+                        <!-- Right small sparkle -->
+                        <path d="M19 11.5l.7 1.4 1.4.7-1.4.7L19 15.9l-.7-1.4-1.4-.7 1.4-.7L19 11.5z"/>
+                    </svg>
+                    <span class="ask-text">Ask KrisShop</span>
+                    <span class="beta-badge">Beta</span>
+                </button>
+                <div class="search-suggest-dropdown" aria-hidden="true">
+                    <div class="search-suggest-meta"></div>
+                    <div class="search-suggest-grid"></div>
+                </div>
+            </div>
+
+            <!-- Right Icons -->
+            <div class="right-icons">
+                <!-- Globe Icon -->
+                <!--
+                <svg class="icon-button" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                -->
+
+                <div class="travel-toggle-wrap">
+                    <button class="travel-toggle-button" aria-label="Toggle traveller options" aria-expanded="false">
+                        <svg class="icon-plane" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- User Icon -->
+                <svg class="icon-button" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+
+                <!-- Heart Icon -->
+                <!--
+                <svg class="icon-button" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                -->
+
+                <!-- Shopping Cart Icon with Badge -->
+                <div class="cart-icon">
+                    <svg class="icon-button" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">2</span>
+                </div>
+                <div class="travel-hint-box" role="status" aria-live="polite" aria-hidden="true">Currently in Non-Travellers mode.</div>
+            </div>
+        </div>
+
+        <!-- Navigation Row -->
+        <div class="navigation-row">
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <!-- <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg> -->
+                    CATEGORIES
+                </a>
+                <a href="#" class="nav-item">
+                    <!-- <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                    </svg> -->
+                    BRANDS
+                </a>
+                <a href="#" class="nav-item">
+                    <!-- <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="3" x2="9" y2="21"></line>
+                    </svg> -->
+                    DEALS
+                </a>
+                <a href="#" class="nav-item">
+                    <!-- <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <path d="M12 8v8m-4-4h8"></path>
+                    </svg> -->
+                    BATIK LABEL
+                </a>
+                <a href="#" class="nav-item">
+                    <!-- <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg> -->
+                    NEW ARRIVALS
+                </a>
+                <!-- <a href="#" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    </svg>
+                    SALE
+                </a> -->
+            </nav>
+            <div class="traveller-desktop-cluster">
+                <div class="traveller-tabs" role="tablist" aria-label="Traveller selector">
+                    <button class="traveller-tab active" role="tab" aria-selected="true">
+                        <svg class="traveller-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+                            <path d="M16 8h4l3 3v5h-7z"></path>
+                            <circle cx="5.5" cy="18.5" r="1.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="1.5"></circle>
+                        </svg>
+                        <span>Non-Travellers</span>
+                    </button>
+                    <button class="traveller-tab" role="tab" aria-selected="false">
+                        <svg class="traveller-tab-icon traveller-tab-icon--plane" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z"></path>
+                        </svg>
+                        <span>Travellers</span>
+                    </button>
+                </div>
+                <div class="traveller-desktop-tooltip" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <div class="traveller-utility-row" aria-label="Traveller selector row">
+            <div class="traveller-utility-inner">
+                <div class="traveller-tabs" role="tablist" aria-label="Traveller selector">
+                    <button class="traveller-tab active" role="tab" aria-selected="true">
+                        <svg class="traveller-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+                            <path d="M16 8h4l3 3v5h-7z"></path>
+                            <circle cx="5.5" cy="18.5" r="1.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="1.5"></circle>
+                        </svg>
+                        <span>Non-Travellers</span>
+                    </button>
+                    <button class="traveller-tab" role="tab" aria-selected="false">
+                        <svg class="traveller-tab-icon traveller-tab-icon--plane" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z"></path>
+                        </svg>
+                        <span>Travellers</span>
+                    </button>
+                </div>
+                <p class="traveller-mode-message" aria-live="polite"></p>
+            </div>
+        </div>
+
+        <div class="main-page-banner">
+            <img src="https://s7ap1.scene7.com/is/image/krisshop/0626-Boost-Your-Miles_3200x1200?fmt=webp&wid=1920&fit=wrap" alt="Main promotional banner" loading="lazy">
+        </div>
+
+        <section class="scroll-test-content" aria-label="Scroll testing content">
+            <h3 class="scroll-test-title">Scroll Testing Content</h3>
+            <p class="scroll-test-subtitle">Use this section to test mobile scroll behavior for the utility row.</p>
+            <div class="scroll-test-list">
+                <article class="scroll-test-item">
+                    <h4>Test Block 1</h4>
+                    <p>Scroll down and verify the utility row hides while the sticky header remains visible.</p>
+                </article>
+                <article class="scroll-test-item">
+                    <h4>Test Block 2</h4>
+                    <p>Scroll back to the top and confirm the inline utility row appears again between header and banner.</p>
+                </article>
+                <article class="scroll-test-item">
+                    <h4>Test Block 3</h4>
+                    <p>Tap the airplane icon after scrolling and verify the utility row opens as an overlay under the header.</p>
+                </article>
+                <article class="scroll-test-item">
+                    <h4>Test Block 4</h4>
+                    <p>Tap outside the overlay row to confirm it closes and the compact scrolled state remains intact.</p>
+                </article>
+                <article class="scroll-test-item">
+                    <h4>Test Block 5</h4>
+                    <p>Switch between Non-Travellers and Travellers and confirm the message and banner state stay in sync.</p>
+                </article>
+                <article class="scroll-test-item">
+                    <h4>Test Block 6</h4>
+                    <p>Continue scrolling to ensure there are no seams, jumps, or unexpected spacing during transitions.</p>
+                </article>
+                <article class="scroll-test-item">
+                    <h4>Test Block 7</h4>
+                    <p>This extra content is only for prototype validation and can be removed once behavior is confirmed.</p>
+                </article>
+                <article class="scroll-test-item">
+                    <h4>Test Block 8</h4>
+                    <p>Final block to guarantee enough page height for repeated open/close and scroll interaction testing.</p>
+                </article>
+            </div>
+        </section>
+
+        <div class="ask-content-wrapper">
+            <section class="ask-content-card" aria-label="Ask KrisShop">
+                <button class="ask-panel-minimize" aria-label="Minimize Ask KrisShop">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="ask-content-header">
+                    <div class="ask-content-icon" aria-hidden="true">
+                        <svg class="ask-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.5l1.6 3.3 3.3 1.6-3.3 1.6L12 12l-1.6-3.3L6.9 7.1l3.3-1.6L12 2.5z"/>
+                            <path d="M5 11.5l.7 1.4 1.4.7-1.4.7L5 15.9l-.7-1.4-1.4-.7 1.4-.7L5 11.5z"/>
+                            <path d="M19 11.5l.7 1.4 1.4.7-1.4.7L19 15.9l-.7-1.4-1.4-.7 1.4-.7L19 11.5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="ask-content-title-row">
+                            <h2 class="ask-content-title">Ask KrisShop</h2>
+                            <span class="ask-content-beta">Beta</span>
+                        </div>
+                        <p class="ask-content-subtitle">Your AI shopping concierge, powered by Adobe Brand Concierge</p>
+                    </div>
+                </div>
+
+                <p class="ask-content-desc">
+                    Describe what you're looking for in natural language and let our AI find the perfect products,
+                    compare miles redemption options, and curate gift ideas tailored to your journey.
+                </p>
+
+                <div class="ask-content-chips" aria-label="Suggestions">
+                    <span class="ask-chip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2 11 13"></path><path d="M22 2 15 22 11 13 2 9 22 2z"></path>
+                        </svg>
+                        Gifts for a long-haul flight
+                    </span>
+                    <span class="ask-chip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2.5l1.6 3.3 3.3 1.6-3.3 1.6L12 12l-1.6-3.3L6.9 7.1l3.3-1.6L12 2.5z"></path>
+                        </svg>
+                        Best skincare under 200 SGD
+                    </span>
+                    <span class="ask-chip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.59 13.41 11 3.83a2 2 0 0 0-1.41-.58H4a2 2 0 0 0-2 2v5.59a2 2 0 0 0 .59 1.41L12.17 22a2 2 0 0 0 2.83 0l5.59-5.59a2 2 0 0 0 0-2.83z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Redeem my KrisFlyer miles
+                    </span>
+                </div>
+
+                <div class="ask-content-actions">
+                    <button class="ask-action-primary">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Start a conversation
+                    </button>
+                    <button class="ask-action-secondary">
+                        Learn more
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const tabs = document.querySelectorAll('.traveller-tab');
+                const travellerModeMessages = document.querySelectorAll('.traveller-mode-message');
+                const travellerUtilityRow = document.querySelector('.traveller-utility-row');
+                const headerContainer = document.querySelector('.header-container');
+                const primaryHeader = document.querySelector('.primary-header');
+                const hamburgerButton = document.querySelector('.hamburger-button');
+                const mobileMenuDrawer = document.querySelector('.mobile-menu-drawer');
+                const mobileMenuBackdrop = document.querySelector('.mobile-menu-backdrop');
+                const mobileMenuClose = document.querySelector('.mobile-menu-close');
+                const searchInput = document.querySelector('.search-input');
+                const searchAskUnified = document.querySelector('.search-ask-unified');
+                const searchSuggestDropdown = document.querySelector('.search-suggest-dropdown');
+                const searchSuggestMeta = document.querySelector('.search-suggest-meta');
+                const searchSuggestGrid = document.querySelector('.search-suggest-grid');
+                const travelToggleButton = document.querySelector('.travel-toggle-button');
+                const travelHintBox = document.querySelector('.travel-hint-box');
+                const desktopCluster = document.querySelector('.traveller-desktop-cluster');
+                const desktopTooltip = document.querySelector('.traveller-desktop-tooltip');
+                const desktopTabs = desktopCluster ? desktopCluster.querySelectorAll('.traveller-tab') : [];
+                const mainBannerImage = document.querySelector('.main-page-banner img');
+                let travelHintTimeoutId = null;
+                const travellerBannerUrl = 'https://s7ap1.scene7.com/is/image/krisshop/3200x1200-7?fmt=webp&wid=3200&fit=wrap';
+                const nonTravellerBannerUrl = mainBannerImage ? mainBannerImage.getAttribute('src') : '';
+                const travellerMessageMap = {
+                    nonTravellers: 'Shop more products, all available for home delivery.',
+                    travellers: 'Shop traveller-exclusives, Pre-order to flight or Post-flight for home delivery.'
+                };
+                const searchSampleProducts = [
+                    { name: 'Tumi Alpha Cabin Luggage', brand: 'Tumi', price: 'S$1,180', tags: ['luggage', 'carry-on', 'travel'] },
+                    { name: 'SK-II Facial Treatment Essence', brand: 'SK-II', price: 'S$249', tags: ['skincare', 'beauty', 'gift'] },
+                    { name: 'Sony WH-1000XM5 Headphones', brand: 'Sony', price: 'S$499', tags: ['audio', 'noise cancelling', 'flight'] },
+                    { name: 'TWG Grand Jasmine Tea Set', brand: 'TWG', price: 'S$88', tags: ['tea', 'gourmet', 'gift'] },
+                    { name: 'Rimowa Essential Check-In', brand: 'Rimowa', price: 'S$1,520', tags: ['luggage', 'travel', 'premium'] },
+                    { name: 'La Mer Moisturizing Cream', brand: 'La Mer', price: 'S$540', tags: ['skincare', 'luxury', 'beauty'] },
+                    { name: 'Dyson Supersonic Hair Dryer', brand: 'Dyson', price: 'S$699', tags: ['beauty', 'electronics', 'gift'] },
+                    { name: 'Bose QuietComfort Earbuds', brand: 'Bose', price: 'S$329', tags: ['audio', 'flight', 'travel'] }
+                ];
+                const togglePlanePath = 'M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z';
+                const toggleTruckSvg = '<rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><path d="M16 8h4l3 3v5h-7z"></path><circle cx="5.5" cy="18.5" r="1.5"></circle><circle cx="18.5" cy="18.5" r="1.5"></circle>';
+
+                function isTravellerLabel(tabLabel) {
+                    return tabLabel.includes('travellers') && !tabLabel.includes('non-');
+                }
+
+                function messageByLabel(tabLabel) {
+                    return isTravellerLabel(tabLabel) ? travellerMessageMap.travellers : travellerMessageMap.nonTravellers;
+                }
+
+                function updateTravellerModeMessage(tab) {
+                    if (!travellerModeMessages || travellerModeMessages.length === 0 || !tab) return;
+                    const tabLabel = (tab.textContent || '').trim().toLowerCase();
+                    const message = messageByLabel(tabLabel);
+                    travellerModeMessages.forEach(function (messageNode) {
+                        messageNode.textContent = message;
+                    });
+                }
+
+                function escapeHtml(text) {
+                    return String(text)
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#39;');
+                }
+
+                function hideSearchSuggestions() {
+                    if (!searchSuggestDropdown) return;
+                    searchSuggestDropdown.classList.remove('is-visible');
+                    searchSuggestDropdown.setAttribute('aria-hidden', 'true');
+                }
+
+                function scoreSearchResult(product, query) {
+                    const q = query.toLowerCase();
+                    const name = product.name.toLowerCase();
+                    const brand = product.brand.toLowerCase();
+                    let score = 0;
+                    if (name.includes(q)) score += 5;
+                    if (brand.includes(q)) score += 3;
+                    product.tags.forEach(function (tag) {
+                        if (tag.toLowerCase().includes(q)) score += 1;
+                    });
+                    return score;
+                }
+
+                function renderSearchSuggestions(query) {
+                    if (!searchSuggestDropdown || !searchSuggestGrid || !searchSuggestMeta) return;
+                    const trimmed = (query || '').trim();
+                    if (!trimmed) {
+                        hideSearchSuggestions();
+                        return;
+                    }
+
+                    const ranked = searchSampleProducts
+                        .map(function (product) {
+                            return { product: product, score: scoreSearchResult(product, trimmed) };
+                        })
+                        .filter(function (entry) {
+                            return entry.score > 0;
+                        })
+                        .sort(function (a, b) {
+                            return b.score - a.score;
+                        })
+                        .slice(0, 6)
+                        .map(function (entry) {
+                            return entry.product;
+                        });
+
+                    const resultList = ranked.length > 0 ? ranked : searchSampleProducts.slice(0, 4);
+                    searchSuggestMeta.textContent = 'Semantic matches for "' + trimmed + '"';
+                    searchSuggestGrid.innerHTML = resultList.map(function (product) {
+                        return '<div class="search-suggest-card">'
+                            + '<div class="search-suggest-thumb">' + escapeHtml(product.brand.charAt(0)) + '</div>'
+                            + '<div>'
+                            + '<div class="search-suggest-name">' + escapeHtml(product.name) + '</div>'
+                            + '<div class="search-suggest-sub">' + escapeHtml(product.brand) + ' · ' + escapeHtml(product.price) + '</div>'
+                            + '</div>'
+                            + '</div>';
+                    }).join('');
+
+                    searchSuggestDropdown.classList.add('is-visible');
+                    searchSuggestDropdown.setAttribute('aria-hidden', 'false');
+                }
+
+                function updateTravelToggleIcon(tab) {
+                    if (!travelToggleButton || !tab) return;
+                    const toggleSvg = travelToggleButton.querySelector('svg');
+                    if (!toggleSvg) return;
+                    const tabLabel = (tab.textContent || '').trim().toLowerCase();
+                    const isTravellerMode = isTravellerLabel(tabLabel);
+                    toggleSvg.classList.toggle('icon-plane', isTravellerMode);
+                    if (isTravellerMode) {
+                        toggleSvg.setAttribute('fill', 'currentColor');
+                        toggleSvg.setAttribute('stroke', 'none');
+                        toggleSvg.removeAttribute('stroke-width');
+                        toggleSvg.innerHTML = '<path d="' + togglePlanePath + '"></path>';
+                    } else {
+                        toggleSvg.setAttribute('fill', 'none');
+                        toggleSvg.setAttribute('stroke', 'currentColor');
+                        toggleSvg.setAttribute('stroke-width', '2');
+                        toggleSvg.innerHTML = toggleTruckSvg;
+                    }
+                }
+
+                function showDesktopTooltip(tab) {
+                    if (!desktopTooltip || !tab) return;
+                    const tabLabel = (tab.textContent || '').trim().toLowerCase();
+                    desktopTooltip.textContent = messageByLabel(tabLabel);
+                    desktopTooltip.classList.add('is-visible');
+                    desktopTooltip.setAttribute('aria-hidden', 'false');
+
+                    const tabRect = tab.getBoundingClientRect();
+                    const tooltipRect = desktopTooltip.getBoundingClientRect();
+                    let tipX = Math.round((tabRect.left + (tabRect.width / 2)) - tooltipRect.left);
+                    tipX = Math.max(14, Math.min(tipX, tooltipRect.width - 14));
+                    desktopTooltip.style.setProperty('--desktop-tip-x', tipX + 'px');
+                }
+
+                function hideDesktopTooltip() {
+                    if (!desktopTooltip) return;
+                    desktopTooltip.classList.remove('is-visible');
+                    desktopTooltip.setAttribute('aria-hidden', 'true');
+                }
+
+                function setTravellerRowOpen(isOpen) {
+                    if (!travellerUtilityRow) return;
+                    travellerUtilityRow.classList.toggle('is-open', isOpen);
+                    if (!isOpen) {
+                        syncMobileUtilityRowVisibility();
+                    } else {
+                        travellerUtilityRow.classList.remove('is-scrolled-hidden');
+                    }
+                    if (travelToggleButton) {
+                        travelToggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    }
+                }
+
+                function isMobileViewport() {
+                    return window.matchMedia('(max-width: 768px)').matches;
+                }
+
+                function isHeaderStickyActive() {
+                    if (!primaryHeader || !isMobileViewport()) return false;
+                    const headerRect = primaryHeader.getBoundingClientRect();
+                    return window.scrollY > 0 && headerRect.top <= 0.5;
+                }
+
+                function syncMobileUtilityRowVisibility() {
+                    if (!travellerUtilityRow || !primaryHeader) return;
+                    if (!isMobileViewport()) {
+                        travellerUtilityRow.classList.remove('is-scrolled-hidden');
+                        travellerUtilityRow.classList.remove('is-open');
+                        return;
+                    }
+
+                    const stickyActive = isHeaderStickyActive();
+                    let overlayOpen = travellerUtilityRow.classList.contains('is-open');
+                    if (overlayOpen && !stickyActive) {
+                        travellerUtilityRow.classList.remove('is-open');
+                        if (travelToggleButton) {
+                            travelToggleButton.setAttribute('aria-expanded', 'false');
+                        }
+                        overlayOpen = false;
+                    }
+
+                    if (overlayOpen) {
+                        travellerUtilityRow.classList.remove('is-scrolled-hidden');
+                        return;
+                    }
+
+                    if (stickyActive) {
+                        travellerUtilityRow.classList.add('is-scrolled-hidden');
+                    } else {
+                        travellerUtilityRow.classList.remove('is-scrolled-hidden');
+                    }
+                }
+
+                function updateTravellerRowOffset() {
+                    if (!travellerUtilityRow || !primaryHeader) return;
+                    if (!window.matchMedia('(max-width: 768px)').matches) return;
+                    const primaryRect = primaryHeader.getBoundingClientRect();
+                    const topOffset = Math.max(0, Math.round(primaryRect.bottom) - 1);
+                    travellerUtilityRow.style.setProperty('--traveller-row-top', topOffset + 'px');
+                }
+
+                function currentModeLabel() {
+                    const activeTab = document.querySelector('.traveller-tab.active');
+                    if (!activeTab) return 'Non-Travellers';
+                    return (activeTab.textContent || '').trim() || 'Non-Travellers';
+                }
+
+                function modeFromToggleIcon() {
+                    if (!travelToggleButton) return 'non-travellers';
+                    const toggleSvg = travelToggleButton.querySelector('svg');
+                    if (!toggleSvg) return 'non-travellers';
+                    return toggleSvg.classList.contains('icon-plane') ? 'travellers' : 'non-travellers';
+                }
+
+                function hideTravelHint() {
+                    if (!travelHintBox) return;
+                    travelHintBox.classList.remove('is-visible');
+                    travelHintBox.setAttribute('aria-hidden', 'true');
+                }
+
+                function positionTravelHintArrow() {
+                    if (!travelHintBox || !travelToggleButton) return;
+                    const hintRect = travelHintBox.getBoundingClientRect();
+                    const iconRect = travelToggleButton.getBoundingClientRect();
+                    let tipX = Math.round((iconRect.left + (iconRect.width / 2)) - hintRect.left);
+                    tipX = Math.max(14, Math.min(tipX, hintRect.width - 14));
+                    travelHintBox.style.setProperty('--travel-hint-tip-x', tipX + 'px');
+                }
+
+                function showTravelHint(modeLabel) {
+                    if (!travelHintBox) return;
+                    const resolvedLabel = (modeLabel || modeFromToggleIcon() || currentModeLabel()).toLowerCase();
+                    travelHintBox.textContent = isTravellerLabel(resolvedLabel)
+                        ? 'Travellers mode selected'
+                        : 'Non-Travellers mode selected';
+                    travelHintBox.classList.add('is-visible');
+                    travelHintBox.setAttribute('aria-hidden', 'false');
+                    positionTravelHintArrow();
+                    if (travelHintTimeoutId) {
+                        clearTimeout(travelHintTimeoutId);
+                    }
+                    travelHintTimeoutId = window.setTimeout(function () {
+                        hideTravelHint();
+                    }, 3000);
+                }
+
+                function updateBannerBySelectedTab(tab) {
+                    if (!mainBannerImage || !tab) return;
+                    const tabLabel = (tab.textContent || '').trim().toLowerCase();
+                    if (isTravellerLabel(tabLabel)) {
+                        mainBannerImage.setAttribute('src', travellerBannerUrl);
+                    } else {
+                        mainBannerImage.setAttribute('src', nonTravellerBannerUrl);
+                    }
+                }
+
+                function closeMobileMenu() {
+                    if (!mobileMenuDrawer || !mobileMenuBackdrop) return;
+                    mobileMenuDrawer.classList.remove('is-open');
+                    mobileMenuBackdrop.classList.remove('is-open');
+                    mobileMenuDrawer.setAttribute('aria-hidden', 'true');
+                    mobileMenuBackdrop.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('mobile-menu-open');
+                    if (hamburgerButton) {
+                        hamburgerButton.setAttribute('aria-expanded', 'false');
+                    }
+                }
+
+                function openMobileMenu() {
+                    if (!mobileMenuDrawer || !mobileMenuBackdrop || !isMobileViewport()) return;
+                    mobileMenuDrawer.classList.add('is-open');
+                    mobileMenuBackdrop.classList.add('is-open');
+                    mobileMenuDrawer.setAttribute('aria-hidden', 'false');
+                    mobileMenuBackdrop.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('mobile-menu-open');
+                    if (hamburgerButton) {
+                        hamburgerButton.setAttribute('aria-expanded', 'true');
+                    }
+                }
+
+                if (tabs && tabs.length > 0) {
+                    const activeTab = document.querySelector('.traveller-tab.active');
+                    updateBannerBySelectedTab(activeTab);
+                    updateTravellerModeMessage(activeTab);
+                    updateTravelToggleIcon(activeTab);
+
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', function () {
+                            const selectedLabel = (this.textContent || '').trim().toLowerCase();
+                            tabs.forEach(t => {
+                                t.classList.remove('active');
+                                t.setAttribute('aria-selected', 'false');
+                            });
+
+                            tabs.forEach(t => {
+                                const label = (t.textContent || '').trim().toLowerCase();
+                                if (label === selectedLabel) {
+                                    t.classList.add('active');
+                                    t.setAttribute('aria-selected', 'true');
+                                }
+                            });
+
+                            updateBannerBySelectedTab(this);
+                            updateTravellerModeMessage(this);
+                            updateTravelToggleIcon(this);
+                            if (isTravellerLabel(selectedLabel) || (travelHintBox && travelHintBox.classList.contains('is-visible'))) {
+                                showTravelHint(selectedLabel);
+                            }
+                        });
+                    });
+                }
+
+                if (desktopTabs && desktopTabs.length > 0) {
+                    desktopTabs.forEach(function (tab) {
+                        tab.addEventListener('mouseenter', function () {
+                            showDesktopTooltip(tab);
+                        });
+                        tab.addEventListener('focus', function () {
+                            showDesktopTooltip(tab);
+                        });
+                    });
+
+
+                if (travelToggleButton) {
+                    setTravellerRowOpen(false);
+                    updateTravellerRowOffset();
+                    travelToggleButton.addEventListener('click', function () {
+                        showTravelHint(modeFromToggleIcon());
+                        updateTravellerRowOffset();
+                        if (!isHeaderStickyActive()) {
+                            setTravellerRowOpen(false);
+                            return;
+                        }
+                        const isOpen = travellerUtilityRow ? travellerUtilityRow.classList.contains('is-open') : false;
+                        setTravellerRowOpen(!isOpen);
+                    });
+
+                    document.addEventListener('click', function (event) {
+                        if (!travellerUtilityRow || !travellerUtilityRow.classList.contains('is-open')) return;
+                        const clickTarget = event.target;
+                        const clickedToggle = travelToggleButton.contains(clickTarget);
+                        const clickedInsideRow = travellerUtilityRow.contains(clickTarget);
+                        if (!clickedToggle && !clickedInsideRow) {
+                            setTravellerRowOpen(false);
+                        }
+                    });
+                }
+
+                if (travelHintBox && window.matchMedia('(max-width: 768px)').matches) {
+                    showTravelHint(modeFromToggleIcon());
+                }
+
+                if (hamburgerButton) {
+                    hamburgerButton.setAttribute('aria-expanded', 'false');
+                    hamburgerButton.addEventListener('click', function () {
+                        if (!mobileMenuDrawer) return;
+                        const willOpen = !mobileMenuDrawer.classList.contains('is-open');
+                        if (willOpen) {
+                            openMobileMenu();
+                        } else {
+                            closeMobileMenu();
+                        }
+                    });
+                }
+
+                if (mobileMenuClose) {
+                    mobileMenuClose.addEventListener('click', closeMobileMenu);
+                }
+
+                if (mobileMenuBackdrop) {
+                    mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+                }
+
+                syncMobileUtilityRowVisibility();
+                window.addEventListener('scroll', syncMobileUtilityRowVisibility, { passive: true });
+                window.addEventListener('resize', function () {
+                    updateTravellerRowOffset();
+                    syncMobileUtilityRowVisibility();
+                    if (!isMobileViewport()) {
+                        closeMobileMenu();
+                    }
+                });
+                    if (desktopCluster) {
+                        desktopCluster.addEventListener('mouseleave', function () {
+                            hideDesktopTooltip();
+                        });
+                        desktopCluster.addEventListener('focusout', function (event) {
+                            if (!desktopCluster.contains(event.relatedTarget)) {
+                                hideDesktopTooltip();
+                            }
+                        });
+                    }
+                }
+
+                const askButton = document.querySelector('.ask-krisshop-button');
+                const askContent = document.querySelector('.ask-content-wrapper');
+                const askPanelMinimize = document.querySelector('.ask-panel-minimize');
+
+                if (askButton && askContent) {
+                    askButton.setAttribute('aria-expanded', 'false');
+                    askButton.addEventListener('click', function () {
+                        askContent.classList.toggle('is-visible');
+                        const isVisible = askContent.classList.contains('is-visible');
+                        askButton.setAttribute('aria-expanded', isVisible ? 'true' : 'false');
+                    });
+                }
+
+                if (askPanelMinimize && askContent) {
+                    askPanelMinimize.addEventListener('click', function () {
+                        askContent.classList.remove('is-visible');
+                        if (askButton) {
+                            askButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
+
+                if (searchInput) {
+                    searchInput.addEventListener('input', function () {
+                        renderSearchSuggestions(searchInput.value);
+                    });
+
+                    searchInput.addEventListener('focus', function () {
+                        if (searchInput.value.trim()) {
+                            renderSearchSuggestions(searchInput.value);
+                        }
+                    });
+
+                    searchInput.addEventListener('keydown', function (event) {
+                        if (event.key === 'Escape') {
+                            hideSearchSuggestions();
+                        }
+                    });
+                }
+
+                document.addEventListener('click', function (event) {
+                    if (!searchAskUnified || !searchSuggestDropdown) return;
+                    if (!searchAskUnified.contains(event.target)) {
+                        hideSearchSuggestions();
+                    }
+                });
+
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') {
+                        closeMobileMenu();
+                    }
+                });
+            });
+        </script>
+    </div>
+    </body>
+    </html>
