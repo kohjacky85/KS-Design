@@ -1136,27 +1136,36 @@
                 width: 100%;
                 max-width: 100%;
                 min-width: 0;
-                overflow: hidden;
+                overflow: visible;
             }
 
             .search-area {
                 min-width: 0;
-                padding: 10px 14px;
+                padding: 10px 12px;
             }
 
             .search-input {
                 min-width: 0;
+                font-size: 16px;
             }
 
             .ask-krisshop-button {
                 margin: 2px;
                 padding: 8px;
-                max-width: 48%;
+                max-width: 46%;
+                min-width: 0;
+                flex: 0 1 auto;
             }
 
             .ask-text {
+                display: block;
+                max-width: 112px;
                 overflow: hidden;
                 text-overflow: ellipsis;
+            }
+
+            .beta-badge {
+                flex-shrink: 0;
             }
 
             .ask-content-wrapper {
@@ -1220,6 +1229,16 @@
             .mobile-menu-backdrop,
             .mobile-menu-drawer {
                 display: none !important;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .beta-badge {
+                display: none;
+            }
+
+            .ask-text {
+                max-width: 84px;
             }
         }
     </style>
